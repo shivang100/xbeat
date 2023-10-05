@@ -4,7 +4,6 @@ import product1 from "../public/product1.png";
 import {BsArrowRight} from "react-icons/bs";
 export default function TopProducts() {
 
-
     return (
         <div className="bg-rd text-of text-center justify-center w-full">
             <div className="lg:flex lg:flex-row md:flex md:flex-row text-center justify center">
