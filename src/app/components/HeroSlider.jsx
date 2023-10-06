@@ -10,7 +10,9 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 
 export default function HeroSlider() {
-    const products=data.filter(prod=> prod.id===3 || prod.id===2 || prod.id===4);
+    const products = data.filter(
+        (prod) => prod.id === 3 || prod.id === 2 || prod.id === 4
+    );
     return (
         <Swiper
             modules={[Pagination, A11y, Autoplay]}
@@ -24,7 +26,7 @@ export default function HeroSlider() {
             }}
             pagination={{ clickable: true }}
         >
-            {products.map((prod,i) => {
+            {products.map((prod, i) => {
                 return (
                     <SwiperSlide key={i}>
                         <div className="flex flex-col md:flex-row md:justify-around pt-10 pb-24 pl-24 pr-32">

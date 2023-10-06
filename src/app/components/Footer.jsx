@@ -125,8 +125,8 @@ export default function Footer() {
                 <hr className="lg:pt-4 border-gray-400 pb-2 " />
                 <div className="text-sm font-light flex flex-col md:flex-row justify-between lg:ml-10 text-gray-400">
                     <h1 className="pt-2 mb-2 w-full">
-                        2023 | XBeat. All Rights Reserved. Built by | Gulshan
-                        Songara
+                        2023 | XBeat. All Rights Reserved. Built by | Shivang
+                        Malhotra
                     </h1>
                     <div className="flex mt-4 md:mt-0 lg:ml-10 text-2xl mr-14">
                         <h1 className="pt-2 p-4 pl-6">

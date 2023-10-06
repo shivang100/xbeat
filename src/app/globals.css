@@ -16,6 +16,27 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d; 
+  border-radius: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: #202324; 
+}
+
+html {
+  scrollbar-width: thin; 
+}
+
+html {
+  scrollbar-color: #454a4d #202324; 
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,8 +47,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-
 .swiper-pagination-bullet{
   color: #a9afc3 !important;
   background-color: #a9afc3 !important;
@@ -36,3 +55,4 @@ body {
   color: red !important;
   background-color: red !important; 
 }
+

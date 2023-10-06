@@ -3,7 +3,7 @@ import Link from "next/link";
 import porduct1 from "../public/product1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, A11y, Autoplay } from "swiper";
-
+import data from "../Data/data";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
@@ -43,23 +43,25 @@ export default function FeaturedSlider() {
             }}
             className="featured_swiper"
         >
-            {new Array(3).fill(0).map((i) => {
+            {data.map((prod, i) => {
                 return (
                     <SwiperSlide key={i} className="mb-20">
-                        <div className="text-center">Sony WH-XB910N</div>
+                        <div className="text-center">{prod.title}</div>
                         <figure className="my-8">
                             <Link href="/TopProducts">
                                 <Image
-                                    src={porduct1}
+                                    src={prod.mainImage}
                                     alt="product"
                                     className="w-full"
                                 />
                             </Link>
                         </figure>
                         <h2 className="my-2 text-center">
-                            <span className="text-3xl font-bold">₹13489</span>
+                            <span className="text-3xl font-bold">
+                                ₹{prod.discountedPrice}
+                            </span>
                             <span className="text-2xl line-through ml-2 text-gray-500 font-bold">
-                                ₹19990
+                                ₹{prod.originalPrice}
                             </span>
                         </h2>
                     </SwiperSlide>

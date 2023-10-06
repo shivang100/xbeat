@@ -8,8 +8,27 @@ import {
     FaTags,
     FaCreditCard,
 } from "react-icons/fa";
+import data from "../Data/data";
+import { useState, useEffect } from "react";
 
 export default function TopProducts() {
+    const [showProductList, setShowProductList] = useState("all");
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        let products = [];
+        if (showProductList === "all") {
+            products = data;
+        } else if (showProductList === "camera") {
+            products = data.filter((prod) => prod.category === "Camera");
+        } else if (showProductList === "phone") {
+            products = data.filter((prod) => prod.category === "phone");
+        } else if (showProductList === "laptop") {
+            products = data.filter((prod) => prod.category === "Laptop");
+        }
+        setProductList(products);
+    }, [showProductList]);
+
     return (
         <div className="bg-rd text-of text-center justify-center w-full py-20">
             <div className="lg:flex lg:flex-row md:flex md:flex-row text-center justify-center">
@@ -18,68 +37,85 @@ export default function TopProducts() {
                 </h1>
             </div>
             <div className="lg:flex lg:flex-row md:flex md:flex-row text-lg gap-20 text-center justify-center">
-                <a href="">
-                    <p className="hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd">
-                        All
-                    </p>
-                </a>
-                <a href="">
-                    <p className="hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd">
-                        Cameras
-                    </p>
-                </a>
-                <a href="">
-                    <p className="hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd">
-                        Phones
-                    </p>
-                </a>
-                <a href="">
-                    <p className="hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd">
-                        Laptops
-                    </p>
-                </a>
+                <button
+                    className={`hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd ${
+                        showProductList === "all" ? "bg-pe" : ""
+                    }`}
+                    onClick={() => setShowProductList("all")}
+                >
+                    All
+                </button>
+
+                <button
+                    className={`hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd ${
+                        showProductList === "camera" ? "bg-pe" : ""
+                    }`}
+                    onClick={() => setShowProductList("camera")}
+                >
+                    Cameras
+                </button>
+
+                <button
+                    className={`hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd ${
+                        showProductList === "phone" ? "bg-pe" : ""
+                    }`}
+                    onClick={() => setShowProductList("phone")}
+                >
+                    Phones
+                </button>
+
+                <button
+                    className={`hover:bg-pe pt-1 pb-1 pl-4 pr-4 border rounded border-rd ${
+                        showProductList === "laptop" ? "bg-pe" : ""
+                    }`}
+                    onClick={() => setShowProductList("laptop")}
+                >
+                    Laptops
+                </button>
             </div>
             <div className="lg:px-10 lg:mt-10 md:px-10 md:mt-10 lg:grid lg:grid-cols-4 lg:gap-2 md:grid md:grid-cols-3 md:gap-4 lg:w-full md:full justify-start text-start ">
-                {new Array(11).fill(0).map((ind) => {
+                {productList.map((prod, i) => {
                     return (
                         <div
                             className="border border-white lg:h-[490px] md:h-[400px]"
-                            key={ind}
+                            key={i}
                         >
-                            <div className="bg-or lg:mb-4 md:mb-2 px-10">
-                                <Link href="">
+                            <div className="bg-or lg:mb-4 md:mb-2 h-60 max-h-60">
+                                <Link
+                                    href={`/Product_details?prodId=${prod.id}`}
+                                >
                                     <Image
                                         height={200}
                                         width={300}
                                         alt="ecommerce"
-                                        className=""
-                                        src={product1}
+                                        className="max-h-52"
+                                        src={prod.mainImage}
                                     />
                                 </Link>
                             </div>
                             <div>
                                 <span className="lg:text-xl md:text-lg font-bold lg:px-4 md:px-2 lg:mb-6 md:mb-3">
-                                    ASUS TUF Gaming F15
+                                    {prod.title}
                                 </span>
                                 <br />
                                 <span className="text-sm font-medium lg:px-4 lg:mb-6 md:px-2 md:mb-3">
-                                    Intel Core i5-11400H 11th Gen
+                                    {prod.info}
                                 </span>
                                 <br />
                                 <div className=" border-1-0 bg-of h-[0.5px] mx-4 my-4"></div>
                                 <h2 className="my-2 mx-4">
                                     <span className="text-2xl font-bold">
-                                        ₹13489
+                                        ₹{prod.discountedPrice}
                                     </span>
                                     <span className="text-xl line-through ml-2 text-gray-500 font-bold">
-                                        ₹19990
+                                        ₹{prod.originalPrice}
                                     </span>
                                 </h2>
                                 <br />
                                 <div className="bg-pe lg:mx-4 md:mx-2 ">
-                                <button className=" lg:py-2 md:py-2 flex items-center mx-auto text-white rounded font-light">
-                                    Add to Cart
-                                </button>
+                                    <button className=" lg:py-2 md:py-2 flex items-center mx-auto text-white rounded font-light">
+                                        Add to Cart
+                                    </button>
                                 </div>
                             </div>
                         </div>
