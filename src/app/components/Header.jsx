@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
     AiOutlineSearch,
     AiOutlineUser,
@@ -12,6 +12,7 @@ export default function Header() {
 
     useEffect(() => {
       const handleScroll = () => {
+        console.log(window.scrollY);
         if (window.scrollY > 0) {
           setIsScrolled(true);
         } else {
@@ -23,17 +24,20 @@ export default function Header() {
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
-    }, []);
+
+    }, [isScrolled]);
+
     return (
-            //h-14 bg-black flex justify-between text-gray-400 text-2xl
-        <header className={`${
-            isScrolled ? 'scrolled-header' : 'h-14 bg-rd flex justify-between text-gray-400 text-2xl'
-          }h-14 bg-black flex justify-between text-gray-400 text-2xl p-2 fixed top-0 w-full transition-all linear-out, slow in duration-500`}>
+            //
+        <header className={`p-4 fixed top-0 w-full transition-all ease-in-out duration-300 h-16 flex justify-between text-gray-400 text-2xl ${
+          isScrolled ? 'bg-black' : 'bg-rd' 
+        } `}
+        >
             <Link href="/">
-                <h1 className="font-bold pl-8 pt-3">X-Beat</h1>
+                <h1 className="font-bold pl-8 pt-2">X-Beat</h1>
             </Link>
 
-            <div className="flex gap-12 pt-3 pr-8">
+            <div className="flex gap-12 pt-2 pr-8">
                 <AiOutlineSearch />
                 <AiOutlineShoppingCart />
                 <AiOutlineUser />
