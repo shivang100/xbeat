@@ -1,9 +1,18 @@
-export default data = [
+import camera11 from "/public/camera11.png";
+import camera21 from "/public/camera21.png";
+import camera31 from "/public/camera31.png";
+import phone11 from "/public/phone11.png";
+import phone21 from "/public/phone21.png";
+import phone31 from "/public/phone31.png";
+import phone41 from "/public/phone41.png";
+import phone51 from "/public/phone51.png";
+
+const data = [
     {
         id: 1,
         tag: "Product",
         tagline: "Click The Photos You Have Never Clicked Before ",
-        mainImage: "../public/camera11.png",
+        mainImage: camera11,
         images: [
             "../public/camera12.png",
             "../public/camera13.png",
@@ -21,9 +30,9 @@ export default data = [
     },
     {
         id: 2,
-        tag: "Prooduct",
+        tag: "Product",
         tagline: "Nothing else to view without this.",
-        mainImage: "../public/camera21.png",
+        mainImage: camera21,
         images: [
             "../public/camera21.png",
             "../public/camera22.png",
@@ -42,7 +51,7 @@ export default data = [
         id: 3,
         tag: "Prooduct",
         tagline: "View Far Better Than Anything.",
-        mainImage: "../public/camera31.png",
+        mainImage: camera31,
         images: [
             "../public/camera32.png",
         ],
@@ -60,13 +69,13 @@ export default data = [
         id: 4,
         tag: "Prooduct",
         tagline: "Phone Never Used Before.",
-        mainImage: "../public/phone11.png",
+        mainImage: phone11,
         images: [
             "../public/Phone12.png",
             "../public/Phone13.png",
         ],
-        brand: "Pooco",
-        title: "Poco M24",
+        brand: "Realme",
+        title: "Realme Narzo",
         category: "Phone",
         discountedPrice: 10099,
         originalPrice: 19090,
@@ -79,7 +88,7 @@ export default data = [
         id: 5,
         tag: "Product",
         tagline: "Boost Your Work With The Next Gen .",
-        mainImage: "../public/phone21.png",
+        mainImage: phone21,
         images: [
             "../public/Phone22.png",
             "../public/Phone23.png",
@@ -96,10 +105,10 @@ export default data = [
         path: "/product-details/",
     },
     {
-        id: 5,
+        id: 6,
         tag: "Product",
         tagline: "Phone Never Used Before .",
-        mainImage: "../public/phone31.png",
+        mainImage: phone31,
         images: [
             "../public/Phone32.png",
             "../public/Phone33.png",
@@ -116,10 +125,10 @@ export default data = [
         path: "/product-details/",
     },
     {
-        id: 5,
+        id: 7,
         tag: "Product",
         tagline: "Begin The Race To Success .",
-        mainImage: "../public/phone41.png",
+        mainImage: phone41,
         images: [
             "../public/Phone42.png",
             "../public/Phone43.png",
@@ -139,7 +148,7 @@ export default data = [
         id: 5,
         tag: "Product",
         tagline: "Begin The Race To Success .",
-        mainImage: "../public/phone51.png",
+        mainImage: phone51,
         images: [
             "../public/Phone52.png",
             "../public/Phone53.png",
@@ -157,3 +166,5 @@ export default data = [
     },
     
 ];
+
+export default data;

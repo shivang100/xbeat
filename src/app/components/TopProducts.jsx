@@ -46,11 +46,11 @@ export default function TopProducts() {
                             className="border border-white lg:h-[490px] md:h-[400px]"
                             key={ind}
                         >
-                            <div className="bg-or lg:mb-4 md:mb-2">
+                            <div className="bg-or lg:mb-4 md:mb-2 px-10">
                                 <Link href="">
                                     <Image
-                                        height={250}
-                                        width={400}
+                                        height={200}
+                                        width={300}
                                         alt="ecommerce"
                                         className=""
                                         src={product1}
@@ -62,7 +62,7 @@ export default function TopProducts() {
                                     ASUS TUF Gaming F15
                                 </span>
                                 <br />
-                                <span className="text-sm font-medium lg:px-4 lg:mb-6 md:mb-3">
+                                <span className="text-sm font-medium lg:px-4 lg:mb-6 md:px-2 md:mb-3">
                                     Intel Core i5-11400H 11th Gen
                                 </span>
                                 <br />
@@ -76,9 +76,11 @@ export default function TopProducts() {
                                     </span>
                                 </h2>
                                 <br />
-                                <button className="lg:py-2 md:py-1 bg-pe lg:mt-2 lg:px-6 md:px-5 lg:mx-4 md:mt-4 md:mx-2 lg:pb-2 lg:w-64 md:w-48 text-white rounded font-light">
+                                <div className="bg-pe lg:mx-4 md:mx-2 ">
+                                <button className=" lg:py-2 md:py-2 flex items-center mx-auto text-white rounded font-light">
                                     Add to Cart
                                 </button>
+                                </div>
                             </div>
                         </div>
                     );
@@ -102,7 +104,7 @@ export default function TopProducts() {
                     Our Advantages
                 </h1>
             </div>
-            <div className="flex flex-row gap-32 font-bold text-lg lg:mt-20 md:mt-20 md:mx-5 md:mb-10 lg:mx-2 lg:text-left lg:justify-center md:text-left md:justify-center text-of">
+            <div className="flex flex-row lg:gap-44 md:gap-32 font-bold text-lg lg:mt-20 md:mt-20 md:mx-5 md:mb-10 lg:mx-2 lg:text-left lg:justify-center md:text-left md:justify-center text-of">
                 <div className=" pt-1 pb-1 border rounded border-rd flex gap-4">
                     <span className="text-pe">
                         <FaShippingFast className="h-9 w-9 mt-4" />
